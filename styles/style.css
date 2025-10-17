@@ -81,6 +81,8 @@ header {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  margin: 0;
+  padding: 0;
 }
 
 .navbar li {
@@ -104,12 +106,21 @@ header {
   font-weight: bold;
 }
 
+.menu-icon {
+  display: none;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  padding: 5px;
+}
+
 /* Articles */
 .main-article {
   margin: 20px;
   padding: 20px;
   border: 1px solid #ccc;
   display: flex;
+  width: auto;
 }
 
 .main-article img {
@@ -134,7 +145,7 @@ header {
   flex-wrap: wrap;
   justify-content: space-between;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   padding: 20px;
 }
 
@@ -142,6 +153,8 @@ header {
   width: 29%;
   padding: 20px;
   border: 1px solid #ccc;
+  margin-bottom: 20px;
+  box-sizing: border-box;
 }
 
 .article img {
@@ -168,6 +181,7 @@ header {
   font-weight: bold;
   text-decoration: none;
   margin-top: 30px;
+  display: inline-block;
 }
 
 .btn:hover {
@@ -183,31 +197,49 @@ header {
 .d-flex{
   display: flex;
 }
-
-@media only screen and (max-width: 768px){
-  .main-article{
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .main-article .image,
-  .main-article .content {
+/*Iteration 2 */
+@media only screen and (min-width: 760px) and (max-width: 1024px){
+  .main-article {
     width: 100%;
-    padding:0 5px;
-  }
-
-  .main-article .image {
-    max-width: 100%;
-    margin-bottom: 10px;
-  }
-
-  .articles-container {
-    justify-content: center;
+    margin-left: 0;
+    margin-right: 0;
     padding: 10px;
   }
 
+  .articles-container {
+    padding: 20px;
+  }
+
   .article {
-    width: 100% !important;
+    width: 48%;
+  }
+}
+/*Iteration 1*/
+@media only screen and (max-width: 760px) {
+  .navbar {
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+  }
+  .navbar li {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #ffffff;
+  }
+
+  .navbar li:last-child {
+    border-bottom: none;
+  }
+
+  .articles-container {
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+  }
+  .article {
+    width: 100%;
     margin-bottom: 20px;
     box-sizing: border-box;
     display: flex;
@@ -217,16 +249,33 @@ header {
   }
   .article .btn {
     width: fit-content;
+    margin-top: 15px;
   }
-  .navbar {
-    flex-wrap: wrap;
+  .main-article {
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    padding: 10px;
   }
-  .navbar li {
-    width: 100%;
   
+  .main-article .image {
+    width: 100%;
+    padding: 0;
+    margin-bottom: 10px;
   }
 
+  .main-article .content {
+    width: 100%;
+    padding: 0;
   }
+
+}
+/*Iteration 3 */
+@media (max-width: 400px) {
+  .navbar li {
+    display: none;
+  }
+  .menu-icon {
+    display: inline-block;
+  }
+}
 
